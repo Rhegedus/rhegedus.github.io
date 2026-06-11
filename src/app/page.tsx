@@ -125,7 +125,7 @@ export default async function HomePage() {
                 Available for Architecture & Solutions Advisory
               </div>
               <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-100 leading-[1.1]">
-                Robert John <br />
+                Robert <br />
                 <span className="bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-400 bg-clip-text text-transparent">
                   Hegedus II
                 </span>
@@ -406,7 +406,7 @@ export default async function HomePage() {
       <footer className="border-t border-slate-900 bg-slate-950/80 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} Robert John Hegedus II. All rights reserved.
+            © {new Date().getFullYear()} Robert Hegedus II. All rights reserved.
           </div>
           <div className="flex gap-4">
             <a href="https://github.com/rhegedus" className="hover:text-slate-300 transition-colors">GitHub</a>

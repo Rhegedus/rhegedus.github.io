@@ -3,6 +3,7 @@ title: "Family Pet Manager (FPM)"
 company: "Founder & Solo Developer"
 status: "Active Production"
 tags: ["AWS", "Serverless", "Next.js", "AI Orchestration"]
+order: 1
 ---
 
 ### The Architecture

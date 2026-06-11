@@ -11,6 +11,7 @@ export interface PostMetadata {
   tags: string[];
   company: string;
   status: string;
+  order?: number;
   [key: string]: any;
 }
 
@@ -54,6 +55,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
   const title = typeof data.title === 'string' && data.title ? data.title : 'Untitled';
   const company = typeof data.company === 'string' ? data.company : '';
   const status = typeof data.status === 'string' ? data.status : '';
+  const order = typeof data.order === 'number' ? data.order : undefined;
 
   let tags: string[] = [];
   if (Array.isArray(data.tags)) {
@@ -68,6 +70,7 @@ export async function getPostBySlug(slug: string): Promise<Post> {
     tags,
     company,
     status,
+    order,
   };
 
   return {
@@ -91,5 +94,17 @@ export async function getAllPosts(): Promise<Post[]> {
   );
 
   // Filter out any null results from files that failed to read or parse
-  return posts.filter((post): post is Post => post !== null);
+  const validPosts = posts.filter((post): post is Post => post !== null);
+
+  // Sort posts by order metadata (ascending), with fallback to alphabetical order by title
+  return validPosts.sort((a, b) => {
+    const orderA = typeof a.metadata.order === 'number' ? a.metadata.order : 999;
+    const orderB = typeof b.metadata.order === 'number' ? b.metadata.order : 999;
+
+    if (orderA !== orderB) {
+      return orderA - orderB;
+    }
+
+    return a.metadata.title.localeCompare(b.metadata.title);
+  });
 }

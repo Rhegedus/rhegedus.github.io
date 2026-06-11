@@ -3,6 +3,7 @@ title: "Automated Edge Routing Proxy"
 company: "Infrastructure Blueprint"
 status: "Production Blueprint"
 tags: ["Caddy", "Reverse Proxy", "SSL Automation", "DevOps"]
+order: 4
 ---
 
 ### The Setup

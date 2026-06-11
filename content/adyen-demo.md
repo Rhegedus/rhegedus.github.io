@@ -3,6 +3,7 @@ title: "Adyen Payment Orchestration Demo"
 company: "Solutions Engineering Showcase"
 status: "Completed"
 tags: ["FinTech", "API Integration", "Payment Rails"]
+order: 3
 ---
 
 ### The Objective
