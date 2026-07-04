@@ -336,7 +336,7 @@ export default async function HomePage() {
                 // Determine post concise description
                 let shortDesc = '';
                 if (isFpm) {
-                  shortDesc = 'An enterprise-grade, multi-tenant pet registry platform engineered completely on a serverless AWS stack with Stripe subscription billing. Designed for high availability, low-latency state changes, and smart data routing.';
+                  shortDesc = 'A multi-tenant, AI-driven pet registry platform engineered on a serverless AWS single-table stack with Stripe & Adyen billing, TNR quota controls, and exposure risk contact tracing.';
                 } else if (isToolkit) {
                   shortDesc = 'A consolidated, enterprise-grade engineering hub designed to automate high-volume user data ingestion, transactional messaging validation, support auditing, and client delivery operations.';
                 } else if (post.slug === 'adyen-demo') {
