@@ -49,7 +49,7 @@ export default async function HomePage() {
       colorClass: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
       glowClass: 'hover:border-indigo-500/30 hover:shadow-[0_0_20px_-3px_rgba(99,102,241,0.15)]',
       skills: [
-        { name: 'Adyen Integration', desc: 'Multi-merchant payment drop-ins, secure tokenization, and webhooks.' },
+        { name: 'Adyen & Stripe Integration', desc: 'Multi-merchant drop-ins, subscription billing, secure tokenization, and webhooks.' },
         { name: 'Bank Onboarding & Sponsor Rails', desc: 'Direct banking integrations, ACH/wire, and card network compliance.' },
         { name: 'Card Issuance Constructs', desc: 'Fulfillment workflows, ledgering, and transaction authorization.' },
         { name: 'NetSuite & Salesforce ERP', desc: 'Fault-tolerant ledgers and real-time syncing pipelines.' }
@@ -336,7 +336,7 @@ export default async function HomePage() {
                 // Determine post concise description
                 let shortDesc = '';
                 if (isFpm) {
-                  shortDesc = 'An enterprise-grade, multi-tenant pet registry platform engineered completely on a serverless AWS stack. Designed for high availability, low-latency state changes, and smart data routing.';
+                  shortDesc = 'An enterprise-grade, multi-tenant pet registry platform engineered completely on a serverless AWS stack with Stripe subscription billing. Designed for high availability, low-latency state changes, and smart data routing.';
                 } else if (isToolkit) {
                   shortDesc = 'A consolidated, enterprise-grade engineering hub designed to automate high-volume user data ingestion, transactional messaging validation, support auditing, and client delivery operations.';
                 } else if (post.slug === 'adyen-demo') {

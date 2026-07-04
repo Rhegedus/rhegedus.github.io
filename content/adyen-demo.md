@@ -6,6 +6,8 @@ tags: ["FinTech", "API Integration", "Payment Rails"]
 order: 3
 ---
 
+[👉 View Live Demo](https://demo-adyen.rhegedus.com/)
+
 ### The Objective
 
 A comprehensive demonstration environment showcasing advanced multi-merchant payment orchestration, tokenization flows, and secure webhooks utilizing Adyen's public core API blocks.

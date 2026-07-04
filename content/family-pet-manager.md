@@ -2,7 +2,7 @@
 title: "Family Pet Manager (FPM)"
 company: "Founder & Solo Developer"
 status: "Active Production"
-tags: ["AWS", "Serverless", "Next.js", "AI Orchestration"]
+tags: ["AWS", "Serverless", "Next.js", "AI Orchestration", "Stripe Integration"]
 order: 1
 ---
 
@@ -12,6 +12,7 @@ An enterprise-grade, multi-tenant pet registry platform engineered completely on
 
 ### Technical Pillars
 
+* **Payment Integration (Stripe):** Secure billing infrastructure leveraging Stripe Checkout and customer portal sessions, with signature-verified webhook listeners managing subscription state synchronization across tenant accounts.
 * **State Management:** Strict validation schemas ensuring deterministic data states across distributed serverless functions.
 * **Storage Layer:** High-performance data modeling designed around specific data access patterns to keep transactional latency to a minimum.
 * **AI Custom Reasoning Agent:** (Planned) Integrated reasoning layer hosted securely to parse platform events and automate data analysis for registries.
