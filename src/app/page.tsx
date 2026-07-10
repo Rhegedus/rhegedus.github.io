@@ -81,18 +81,8 @@ export default async function HomePage() {
             </span>
           </Link>
           <nav className="flex items-center gap-6 text-sm font-semibold text-slate-300">
-            <a 
-              href="https://rhegedus.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center gap-1 hover:text-purple-400 transition-colors"
-              aria-label="Consulting Website"
-            >
-              <span>Consulting</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-            <a 
-              href="https://github.com/rhegedus" 
+            <a
+              href="https://github.com/rhegedus"
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-1.5 hover:text-cyan-400 transition-colors"
@@ -149,17 +139,6 @@ export default async function HomePage() {
                 and complex enterprise accounts. Highlight the unique ability to bridge deep code implementation 
                 with executive vendor, bank, and client relationships.
               </p>
-              <div className="pt-2">
-                <a 
-                  href="https://rhegedus.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all duration-200 group/btn"
-                >
-                  Visit Consulting Site
-                  <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                </a>
-              </div>
             </div>
             
             {/* Context Sidebar */}
@@ -336,9 +315,11 @@ export default async function HomePage() {
                 // Determine post concise description
                 let shortDesc = '';
                 if (isFpm) {
-                  shortDesc = 'A multi-tenant, AI-driven pet registry platform engineered on a serverless AWS single-table stack with Stripe & Adyen billing, TNR quota controls, and exposure risk contact tracing.';
+                  shortDesc = 'A multi-tenant, AI-driven pet registry platform engineered on a serverless AWS single-table stack with Stripe & Adyen billing, TNR quota controls, and exposure risk contact tracing. Ran 3 pilot programs across 40+ foster households, achieving 80-90% automated task-completion accuracy.';
                 } else if (isToolkit) {
                   shortDesc = 'A consolidated, enterprise-grade engineering hub designed to automate high-volume user data ingestion, transactional messaging validation, support auditing, and client delivery operations.';
+                } else if (post.slug === 'netsuite-integration') {
+                  shortDesc = 'Reverse-engineered an undocumented NetSuite integration and rebuilt async sync logic, compressing invoice resync latency from 1-2 days to under 3 minutes. Designed automated billing middleware and an ERP translation layer that reclaimed 20+ engineering hours per week for the internal team.';
                 } else if (post.slug === 'adyen-demo') {
                   shortDesc = 'A comprehensive demonstration environment showcasing advanced multi-merchant payment orchestration, tokenization flows, and secure webhooks utilizing Adyen\'s public core API blocks.';
                 } else if (post.slug === 'caddy-proxy') {
@@ -430,7 +411,6 @@ export default async function HomePage() {
             © {new Date().getFullYear()} Robert Hegedus II. All rights reserved.
           </div>
           <div className="flex gap-4">
-            <a href="https://rhegedus.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors">Consulting</a>
             <a href="https://github.com/rhegedus" className="hover:text-slate-300 transition-colors">GitHub</a>
             <a href="https://www.linkedin.com/in/robert-hegedus-ii/" className="hover:text-slate-300 transition-colors">LinkedIn</a>
           </div>
