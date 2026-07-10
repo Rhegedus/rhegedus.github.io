@@ -62,7 +62,7 @@ export default async function HomePage() {
       glowClass: 'hover:border-purple-500/30 hover:shadow-[0_0_20px_-3px_rgba(168,85,247,0.15)]',
       skills: [
         { name: 'Custom Reasoning Agents', desc: 'Secure agent routing networks powered by dynamic context execution.' },
-        { name: 'Infer.so Model Logic', desc: 'Predictive analytics orchestration and structured model hooks.' },
+        { name: 'Browser Automation & Headless Session Management', desc: 'Puppeteer-driven portal automation with Redis-backed state machines for auth and MFA flows.' },
         { name: 'Multi-Tenant Webhooks', desc: 'High-throughput, signature-verified webhook ingestion.' },
         { name: 'Data Ingestion Pipelines', desc: 'Constant-memory, high-volume ETL streams and data cleaning.' }
       ]
@@ -321,18 +321,21 @@ export default async function HomePage() {
                 } else if (post.slug === 'netsuite-integration') {
                   shortDesc = 'Reverse-engineered an undocumented NetSuite integration and rebuilt async sync logic, compressing invoice resync latency from 1-2 days to under 3 minutes. Designed automated billing middleware and an ERP translation layer that reclaimed 20+ engineering hours per week for the internal team.';
                 } else if (post.slug === 'adyen-demo') {
-                  shortDesc = 'A comprehensive demonstration environment showcasing advanced multi-merchant payment orchestration, tokenization flows, and secure webhooks utilizing Adyen\'s public core API blocks.';
+                  shortDesc = 'Built a production-grade e-commerce checkout flow (Paw & Whisker Supply Co.) on a real Adyen payment gateway integration, using Adyen Drop-in with server-side sessions and webhook event sourcing. Purchase and webhook data is stored in DynamoDB with TTL-based auto-expiry, so the public demo self-cleans with zero manual maintenance. Includes a live admin dashboard tracking purchases and webhook events, with the ability to manually replay webhooks to demonstrate idempotent event handling under real gateway conditions.';
                 } else if (post.slug === 'caddy-proxy') {
                   shortDesc = 'A lightweight, highly resilient reverse-proxy layer configured to orchestrate incoming edge traffic, automate SSL termination, and securely forward requests to multi-tenant backends.';
+                } else if (post.slug === 'bay-area-rto-calculator') {
+                  shortDesc = 'An interactive, multi-factor cost calculator modeling the true cost of in-office work — commute (IRS mileage rate vs. fuel-only), tolls, parking, transit, childcare/petcare premiums, and time-opportunity cost, netted against WFH offset expenses. Designed as both a standalone public tool and an entry point into operations-audit consulting work.';
+                } else if (post.slug === 'docextract-demo') {
+                  shortDesc = 'Built an automated document-retrieval tool that logs into a user\'s insurance carrier portal (Lemonade, AAA) and downloads their policy documents automatically, using Browserless.io/Puppeteer-driven browser automation with a Redis-backed state machine to manage carrier-specific auth flows, including conditional MFA.';
                 }
 
-                return (
-                  <Link
-                    key={post.slug}
-                    href={`/portfolio/${post.slug}`}
-                    className={`block p-8 rounded-2xl border bg-slate-900/20 hover:bg-slate-900/40 transition-all duration-300 group relative overflow-hidden ${borderHoverClass}`}
-                  >
-                    
+                const externalUrl: string | undefined = typeof post.metadata.externalUrl === 'string' ? post.metadata.externalUrl : undefined;
+                const isExternal = Boolean(externalUrl);
+                const cardHref = externalUrl || `/portfolio/${post.slug}`;
+
+                const cardInner = (
+                  <>
                     {/* Ambient glow effect inside card */}
                     <div className={`absolute -right-12 -bottom-12 w-32 h-32 rounded-full blur-2xl opacity-10 group-hover:opacity-25 transition-opacity duration-300 ${glowColor}`} />
 
@@ -344,7 +347,7 @@ export default async function HomePage() {
                               {post.metadata.company}
                             </span>
                           )}
-                          
+
                           {/* Badge based on status or slug */}
                           <div>
                             {isFpm ? (
@@ -394,7 +397,28 @@ export default async function HomePage() {
                     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-slate-200" />
                     </div>
+                  </>
+                );
 
+                const cardClassName = `block p-8 rounded-2xl border bg-slate-900/20 hover:bg-slate-900/40 transition-all duration-300 group relative overflow-hidden ${borderHoverClass}`;
+
+                return isExternal ? (
+                  <a
+                    key={post.slug}
+                    href={cardHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cardClassName}
+                  >
+                    {cardInner}
+                  </a>
+                ) : (
+                  <Link
+                    key={post.slug}
+                    href={cardHref}
+                    className={cardClassName}
+                  >
+                    {cardInner}
                   </Link>
                 );
               })}

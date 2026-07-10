@@ -1,18 +1,19 @@
 ---
-title: "Adyen Payment Orchestration Demo"
+title: "Adyen Checkout & Webhook Event Sourcing Demo"
 company: "Solutions Engineering Showcase"
-status: "Completed"
-tags: ["FinTech", "API Integration", "Payment Rails"]
+status: "Technical Interview Build / Adyen"
+tags: ["Adyen", "Payments", "Webhooks", "Event Sourcing", "Idempotency", "DynamoDB", "Next.js"]
 order: 3
+externalUrl: "https://demo-adyen.rhegedus.com"
 ---
-
-[👉 View Live Demo](https://demo-adyen.rhegedus.com/)
 
 ### The Objective
 
-A comprehensive demonstration environment showcasing advanced multi-merchant payment orchestration, tokenization flows, and secure webhooks utilizing Adyen's public core API blocks.
+Built a production-grade e-commerce checkout flow (Paw & Whisker Supply Co.) on a real Adyen payment gateway integration, using Adyen Drop-in with server-side sessions and webhook event sourcing.
 
 ### Integration Highlights
 
-* **Payment Drop-in:** Custom UI components handling encrypted token handshakes directly with payment gateways.
-* **Webhook Idempotency:** Secure listener layer that validates signatures and guarantees that event processing happens exactly once per event, preventing duplicate transactions.
+* **Adyen Drop-in & Server-Side Sessions:** Encrypted token handshakes handled directly with the payment gateway via server-side session creation.
+* **Webhook Event Sourcing:** Purchase and webhook data stored in DynamoDB with TTL-based auto-expiry, so the public demo self-cleans with zero manual maintenance.
+* **Live Admin Dashboard:** Tracks purchases and webhook events in real time.
+* **Idempotent Replay:** Ability to manually replay webhooks to demonstrate idempotent event handling under real gateway conditions.
